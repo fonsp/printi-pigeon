@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="printipigeon",
-    version="0.0.6",
+    version="0.0.7",
     author="Fons van der Plas",
     author_email="fonsvdplas@gmail.com",
     description="Package for sending images to the printi.me API",
