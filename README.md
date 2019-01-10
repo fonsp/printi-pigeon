@@ -2,6 +2,10 @@
 
 *Python package to send images to the printi API*
 
+Install using:
+```bash
+python3 -m pip install printipigeon
+```
 
 Example usage:
 

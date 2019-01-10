@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="printipigeon",
-    version="0.0.1",
+    version="0.0.5",
     author="Fons van der Plas",
     author_email="fonsvdplas@gmail.com",
     description="Package for sending images to the printi.me API",
@@ -13,6 +13,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/fons-/printi-pigeon",
     packages=setuptools.find_packages(),
+    install_requires=["requests"],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
