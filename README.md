@@ -21,18 +21,24 @@ Example sending image from memory to printi.me/gallery :
 ```python
 import printipigeon as pp
 import io
-from PIL import Image
+import PIL
 
-img = Image.open("somewhere/cat.jpg")
+img = PIL.Image.open("somewhere/cat.jpg")
 
-for x in range(100):
-  for y in range(255):
-    img.putpixel((x,y), (y,y,y))
+# let's add a funky square to the picture
+for x in range(256):
+  for y in range(256):
+    img.putpixel((x,y), (x,y,255))
 
+# f is a file-like object, storing its byte content in memory
 f = io.BytesIO()
 img.save(f, format="PNG")
 
-f.seek(0,0) # writing to f has moved the position
+# writing to f has moved the position
+# let's move it back, so that the bytes will be read
+f.seek(0,0)
+
+# make sure that the filename matches the image format (.png in our case)
 pp.send_binary_image_data("art.png", f, "gallery")
 
 ```
